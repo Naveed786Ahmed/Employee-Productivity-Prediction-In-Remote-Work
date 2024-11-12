@@ -29,3 +29,5 @@ Employee ID</li>
 <h4>How It Works</h4>
 <p>Once all the fields are filled in, the app calculates a productivity score based on the entered values. The result is displayed after a brief processing message, helping employees get quick insights into their performance.</p>
 
+https://employee-productivity-b52e3.web.app
+
