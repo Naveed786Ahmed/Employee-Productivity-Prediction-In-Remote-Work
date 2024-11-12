@@ -31,16 +31,14 @@ class _PredictionFormPageState extends State<PredictionFormPage> {
 
     // Simulate a delay for processing
     Future.delayed(Duration(seconds: 4), () {
+
       setState(() {
-        // Parsing input values
         int workHours = int.parse(workHoursController.text);
         int expectedTasks = int.parse(expectedTasksController.text);
         int tasksCompleted = int.parse(tasksCompletedController.text);
-        double taskCompletionRate =
-            tasksCompleted / expectedTasks; // Runtime calculation
+        double taskCompletionRate = tasksCompleted / expectedTasks; 
         int taskComplexity = int.parse(taskComplexityController.text);
-        double adjustedTaskCompletion =
-            taskCompletionRate * taskComplexity; // Runtime calculation
+        double adjustedTaskCompletion = taskCompletionRate * taskComplexity; 
         int emailFrequency = int.parse(emailFrequencyController.text);
         int meetingFrequency = int.parse(meetingFrequencyController.text);
         double breakDuration = double.parse(breakDurationController.text);
@@ -48,7 +46,7 @@ class _PredictionFormPageState extends State<PredictionFormPage> {
         // Calculate productivity score
         productivityScore = (workHours * 0.2) +
             (adjustedTaskCompletion * 0.4) +
-            ((emailFrequency + meetingFrequency) * 0.2) -
+            ((emailFrequency + meetingFrequency) * 0.3) -
             (breakDuration * 0.1);
 
         isProcessing = false;
@@ -121,7 +119,7 @@ class _PredictionFormPageState extends State<PredictionFormPage> {
         children: [
           if (productivityScore == null) ...[
             CircularProgressIndicator(
-              color: Color(0xFF7E57C2), // Match theme color
+              color: Color(0xFF7E57C2), 
             ),
             SizedBox(height: 20),
             Text(
@@ -220,7 +218,7 @@ class _PredictionFormPageState extends State<PredictionFormPage> {
             _buildInputField(
                 'Meeting Frequency (2-8)', meetingFrequencyController,
                 min: 2, max: 8, icon: Icons.group),
-            _buildInputField('Break Duration (7.5)', breakDurationController,
+            _buildInputField('Break Duration', breakDurationController,
                 isFloat: true, icon: Icons.pause),
             SizedBox(height: 20),
             ElevatedButton(
@@ -262,7 +260,7 @@ class _PredictionFormPageState extends State<PredictionFormPage> {
           labelText: label,
           border: OutlineInputBorder(),
           prefixIcon:
-              Icon(icon, color: Color(0xFF1A237E)), // Updated icon color
+              Icon(icon, color: Color(0xFF1A237E)),
         ),
         validator: (value) {
           if (value == null || value.isEmpty) {
