@@ -30,4 +30,4 @@ Employee ID</li>
 <p>Once all the fields are filled in, the app calculates a productivity score based on the entered values. The result is displayed after a brief processing message, helping employees get quick insights into their performance.</p>
 
 <h3>Splash Screen</h3>
-![Home Screen](assets/link0.png)
+![Home Screen](assets/link0.PNG)
